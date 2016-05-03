@@ -11,6 +11,7 @@ public class Brand implements Serializable {
     private Long id;
     private String brandName;
     private byte[] logo;
+    private List<Product> products;
 
 
     private Brand(){

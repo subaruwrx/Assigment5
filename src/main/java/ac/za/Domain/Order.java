@@ -21,6 +21,7 @@ public class Order implements Serializable {
     private double shippingAmount;
     private double taxAmount;
     private double netAmount;
+    private Address address;
 
 
 

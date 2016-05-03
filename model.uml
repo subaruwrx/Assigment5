@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ac.za.domain</OriginalElement>
+  <nodes>
+    <node x="-10.0" y="606.0">ac.za.domain.UserAccount</node>
+    <node x="1025.0" y="174.25">ac.za.domain.ProductAttribute</node>
+    <node x="812.0" y="352.5">ac.za.domain.WishList</node>
+    <node x="-221.25" y="-53.75">ac.za.domain.OrderDetails</node>
+    <node x="619.5" y="371.25">ac.za.domain.Brand</node>
+    <node x="179.5" y="902.5">ac.za.domain.Role</node>
+    <node x="278.25" y="-127.5">ac.za.domain.ProductType</node>
+    <node x="926.5" y="-129.5">ac.za.domain.Offers</node>
+    <node x="252.5" y="46.25">ac.za.domain.Category</node>
+    <node x="553.0" y="-157.25">ac.za.domain.Product</node>
+    <node x="19.25" y="192.75">ac.za.domain.Order</node>
+    <node x="262.5" y="553.0">ac.za.domain.OrderStatus</node>
+    <node x="453.0" y="597.0">ac.za.domain.User</node>
+    <node x="1178.75" y="-91.25">ac.za.domain.Attributes</node>
+    <node x="-246.75" y="508.25">ac.za.domain.Address</node>
+    <node x="1068.75" y="337.25">ac.za.domain.ShoppingCart</node>
+    <node x="428.75" y="277.5">ac.za.domain.Rating</node>
+    <node x="-57.5" y="884.0">ac.za.domain.FAQ</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ac.za.domain.OrderDetails" target="ac.za.domain.Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.UserAccount" target="ac.za.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.Role" target="ac.za.domain.UserAccount">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.ShoppingCart" target="ac.za.domain.Product">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.Brand" target="ac.za.domain.Product">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.OrderStatus" target="ac.za.domain.Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.User" target="ac.za.domain.Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.WishList" target="ac.za.domain.Product">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.Rating" target="ac.za.domain.Product">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.Attributes" target="ac.za.domain.ProductAttribute">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.Offers" target="ac.za.domain.Product">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.Category" target="ac.za.domain.Product">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.OrderDetails" target="ac.za.domain.Product">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.ProductType" target="ac.za.domain.Product">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.ProductAttribute" target="ac.za.domain.Product">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.Order" target="ac.za.domain.Address">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ac.za.domain.WishList" target="ac.za.domain.User">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8" x="639.0" y="221.25" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
