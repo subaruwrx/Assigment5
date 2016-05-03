@@ -1,6 +1,7 @@
 package ac.za.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Admin on 2016-05-03.
@@ -10,6 +11,7 @@ public class Category implements Serializable {
     private String name;
     private String description;
     private byte[] image;
+    private List<Product > product;
 
     private Category(){}
 

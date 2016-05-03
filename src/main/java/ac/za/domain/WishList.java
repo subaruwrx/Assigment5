@@ -1,6 +1,7 @@
 package ac.za.domain;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Admin on 2016-04-30.
@@ -11,6 +12,8 @@ public class WishList {
     private Long productId;
     private String name;
     private Date insertDate;
+    private List<Product> products;
+    private List<User> user;
 
 
 

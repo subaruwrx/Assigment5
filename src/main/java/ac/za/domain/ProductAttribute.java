@@ -1,6 +1,7 @@
 package ac.za.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Admin on 2016-05-03.
@@ -8,6 +9,8 @@ import java.io.Serializable;
 public class ProductAttribute implements Serializable {
     private Long productId;
     private Long attributeId;
+    private List<Product > product;
+
 
     private ProductAttribute(){}
     public ProductAttribute(Builder build){

@@ -2,6 +2,8 @@ package ac.za.domain;
 
 import java.awt.*;
 import java.io.Serializable;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created by Admin on 2016-04-29.
@@ -12,7 +14,8 @@ public class Rating implements Serializable {
     private String name;
     private byte[] image;
     private String description;
-    //private Image logo = new Image()
+    private List<Product > product;
+
 
 
 

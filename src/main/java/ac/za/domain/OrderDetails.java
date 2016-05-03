@@ -1,6 +1,7 @@
 package ac.za.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by Admin on 2016-05-02.
@@ -13,7 +14,7 @@ public class OrderDetails implements Serializable {
     private double discount;
     private  int quantity;
     private Order order;
-
+    private Product  product;
     private OrderDetails(){}
 
     public OrderDetails(Builder build){

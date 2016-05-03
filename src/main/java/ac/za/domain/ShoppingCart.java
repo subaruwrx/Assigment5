@@ -2,6 +2,7 @@ package ac.za.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -15,6 +16,7 @@ public class ShoppingCart implements Serializable {
     private Date created;
     private int quantity;
     private double price;
+    private List<Product> products;
 
 
 

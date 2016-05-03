@@ -9,6 +9,7 @@ public class ProductType implements Serializable{
     private Long id;
     private String name;
     private String description;
+    private Product product;
 
 
 

@@ -9,6 +9,7 @@ public class Role implements Serializable{
     private Long id;
     private String role;
     private String description;
+    private UserAccount user;
 
     private Role(){}
 

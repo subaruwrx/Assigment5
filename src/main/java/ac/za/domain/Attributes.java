@@ -10,6 +10,7 @@ public class Attributes implements Serializable {
     private String attributeName;
     private String attributeValue;
     private String description;
+    private ProductAttribute attributes;
 
     private Attributes(){}
 

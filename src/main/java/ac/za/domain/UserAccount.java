@@ -16,6 +16,7 @@ public class UserAccount implements Serializable{
     private String hintQuestion;
     private String answer;
     private String description;
+    private User user;
 
     private UserAccount() {
 
