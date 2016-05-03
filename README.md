@@ -19,14 +19,8 @@ search or browse items, add or remove items from shopping cart, do checkout.
 
 ## Type of Users and Fuctions they allowed to do
 
-Administrator
-1) The Admin can login the System
-2) Admin can create categories
-3) Admin can create subcategories
-4) Admin can upload products
-5) Admin can upload product features
+##Administrator
+The Admin can login the System, Admin can create categories, Admin can create subcategories, Admin can upload products and Admin can upload product features
 
-Buyer
-1) The customer can login the System
-2) The buyers can search for a particular product
-3) The buyers can order a product
+##Buyer
+The customer can login the System, The buyers can search for a particular productand  The buyers can order a product
