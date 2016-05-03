@@ -1,29 +1,44 @@
 package ac.za.domain;
 
 
+import java.awt.*;
 import java.io.Serializable;
 
 /**
  * Created by Admin on 2016-04-07.
  */
 public class Product implements Serializable{
-    private long prodId;
+    private long id;
     private String prodName;
     private String prodtype;
-    private String prodsize;
-    private String prodquantity;
+    private double originalPrice;
+    private double salePrice;
+    private long categoryId;
+    private long typeId;
+    private int prodquantity;
+    private String description;
+    private long ratingId;
+    private byte[] image;
+
+
 
     private Product()
     {
     }
 
-    private Product (Builder build)
+    public Product (Builder build)
     {
-      prodId=build.prodId;
-      prodName=build.prodName;
-      prodtype=build.prodtype;
-      prodsize=build.prodsize;
-      prodquantity=build.prodquantity;
+       this.id=build.id;
+       this.prodName=build.prodName;
+       this.prodtype=build.prodtype;
+       this.prodquantity=build.prodquantity;
+       this.image=build.image;
+       this.ratingId=build.ratingId;
+       this.description=build.description;
+       this.typeId=build.typeId;this.categoryId=build.categoryId;
+       this.salePrice=build.salePrice;
+       this.originalPrice=build.originalPrice;
+
 
     }
 
@@ -31,14 +46,57 @@ public class Product implements Serializable{
 
     public static class Builder{
 
-        private long prodId;
+        private long id;
         private String prodName;
         private String prodtype;
-        private String prodsize;
-        private String prodquantity;
+        private double originalPrice;
+        private double salePrice;
+        private long categoryId;
+        private long typeId;
+        private int prodquantity;
+        private String description;
+        private long ratingId;
+        private byte[] image;
 
-        public Builder (long id) {
-            this.prodId = prodId;
+        public Builder () {
+
+        }
+        public Builder id(long id) {
+
+            this.id = id;
+            return this;
+        }
+        public Builder image( byte[] image)
+        {
+            this.image=image;
+            return this;
+        }
+
+        public Builder ratingId(long ratingId)
+        {
+            this.ratingId=ratingId;
+            return this;
+        }
+        public Builder description(String description)
+        {
+            this.description=description;
+            return this;
+        }
+
+        public Builder typeId(long typeId)
+        {
+            this.typeId=typeId;
+            return this;
+        }
+        public Builder categoryId(long categoryId)
+        {
+            this.categoryId=categoryId;
+            return this;
+        }
+        public Builder salePrice(double salePrice)
+        {
+            this.salePrice=salePrice;
+            return this;
         }
 
         public Builder productName(String prodName){
@@ -51,14 +109,14 @@ public class Product implements Serializable{
             return this;
         }
 
-        public Builder productQuantity(String prodquantity){
+        public Builder productQuantity(int prodquantity){
             this.prodquantity= prodquantity;
             return this;
 
         }
 
-        public Builder productMethod(String prodsize){
-            this.prodsize=prodsize;
+        public Builder originalPrice( double originalPrice){
+            this.originalPrice=originalPrice;
             return this;
         }
 
@@ -66,11 +124,18 @@ public class Product implements Serializable{
         public Builder copy(Product value)
         {
 
-            this.prodId = value.getProdId();
+            this.id = value.getId();
             this.prodName =value.getProdName();
             this.prodtype = value.getProdtype();
-            this.prodsize = value.getProdsize();
             this.prodquantity= value.getProdquantity();
+            this.originalPrice=value.getOriginalPrice();
+            this.image=value.getImage();
+            this.ratingId=value.getRatingId();
+            this.description=value.getDescription();
+            this.categoryId=value.getCategoryId();
+            this.salePrice=value.getSalePrice();
+            this.originalPrice=value.getOriginalPrice();
+            this.typeId=value.getTypeId();
 
             return this;
         }
@@ -82,8 +147,8 @@ public class Product implements Serializable{
         }
     }
 
-    public long getProdId() {
-        return prodId;
+    public long getId() {
+        return id;
     }
 
     public String getProdName() {
@@ -94,16 +159,42 @@ public class Product implements Serializable{
         return prodtype;
     }
 
-    public String getProdsize() {
-        return prodsize;
+
+    public byte[] getImage() {
+        return image;
     }
 
-    public String getProdquantity() {
+    public long getRatingId() {
+        return ratingId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public long getTypeId() {
+        return typeId;
+    }
+
+    public double getSalePrice() {
+        return salePrice;
+    }
+
+    public long getCategoryId() {
+        return categoryId;
+    }
+
+    public double getOriginalPrice() {
+        return originalPrice;
+    }
+
+
+    public int getProdquantity() {
         return prodquantity;
     }
 
     @Override
     public String toString() {
-        return "Product{" + "Id=" + prodId + '}';
+        return "Product{" + "Id=" + id + '}';
     }
 }

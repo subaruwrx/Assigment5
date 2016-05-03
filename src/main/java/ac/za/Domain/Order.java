@@ -10,91 +10,135 @@ import java.util.Objects;
  */
 public class Order implements Serializable {
 
-    private int orderNumber;
-    public List<LineItem> lineItems;
-    public Date purchaseOrderDate;
-    public Date deliveryDate;
-    private int supplierID;
-    private int lineItemCount;
-    private String supplierName;
-    private List<Product> myproducts;
+    private Long orderId;
+    private Long customerId;
+    private Long shippingAddresId;
+    private Long billingAddressId;
+    private Date orderDate;
+    private Date shippingDate;
+    private double orderAmount;
+    private double discount;
+    private double shippingAmount;
+    private double taxAmount;
+    private double netAmount;
 
-    public Order(){
+
+
+    private Order(){
 
 
     }
 
-    private Order(Builder build){
-        this.orderNumber=build.orderNumber;
-        this.lineItems=build.lineItems;
-        this.purchaseOrderDate=build.purchaseOrderDate;
-        this.deliveryDate=build.deliveryDate;
-        this.supplierID=build.supplierID;
-        this.lineItemCount=build.lineItemCount;
-        this.supplierName=build.supplierName;
+    public Order(Builder build){
+        this.orderId=build.orderId;
+        this.customerId=build.customerId;
+        this.billingAddressId=build.billingAddressId;
+        this.shippingAddresId=build.shippingAddressId;
+        this.orderDate=build.orderDate;;
+        this.shippingDate=build.shippingDate;
+        this.orderAmount=build.orderAmount;
+        this.discount=build.discount;
+        this.shippingAmount=build.shippingAmount;
+        this.taxAmount=build.taxAmount;
+        this.netAmount=build.netAmount;
+
+
 
     }
 
 
     public static class Builder{
+        private Long orderId;
+        private Long customerId;
+        private Long shippingAddressId;
+        private Long billingAddressId;
+        private Date orderDate;
+        private Date shippingDate;
+        private double orderAmount;
+        private double discount;
+        private double shippingAmount;
+        private double taxAmount;
+        private double netAmount;
 
-        private int orderNumber;
-        public List<LineItem> lineItems;
-        public Date purchaseOrderDate;
-        public Date deliveryDate;
-        private int supplierID;
-        private int lineItemCount;
-        private String supplierName;
 
-        public Builder(int orderNumber){
-            this.orderNumber=orderNumber;
+        public Builder(){
+
         }
-
-        public Builder lineItems( List<LineItem> lineItems){
-            this.lineItems=lineItems;
-            return this;
-        }
-
-
-        public Builder orderDate(Date purchaseOrderDate ){
-            this.purchaseOrderDate=purchaseOrderDate;
-            return this;
-        }
-
-        public Builder deliveryDate(Date deliveryDate){
-            this.deliveryDate=deliveryDate;
-            return this;
-        }
-
-
-        public Builder supplierId(int supplierID)
+        public Builder orderId(Long orderId)
         {
-            this.supplierID=supplierID;
+            this.orderId=orderId;
             return this;
         }
-
-        public Builder lineItemCount(int lineItemCount)
+        public Builder customerId(Long customerId)
         {
-            this.lineItemCount=lineItemCount;
-            return this;
-
+            this.customerId=customerId;
+            return  this;
         }
-
-        public Builder supplierName(String supplierName)
+        public Builder shippingAddressId(Long shippingAddressId)
         {
-            this.supplierName=supplierName;
+            this.shippingAddressId=shippingAddressId;
             return this;
-
         }
+
+        public Builder  billingAddressId(Long billingAddressId)
+        {
+            this.billingAddressId=billingAddressId;
+            return this;
+        }
+
+        public Builder orderDate(Date orderDate ){
+            this.orderDate=orderDate;
+            return this;
+        }
+        public Builder shippingDate(Date shippingDate)
+        {
+            this.shippingDate=shippingDate;
+            return this;
+        }
+        public Builder orderamount(double orderAmount)
+        {
+            this.orderAmount=orderAmount;
+            return this;
+        }
+        public Builder discount(double discount){
+            this.discount=discount;
+            return this;
+        }
+        public Builder shippingAmount(double shippingAmount)
+        {
+            this.shippingAmount=shippingAmount;
+            return this;
+        }
+        public Builder taxAmount(double taxAmount)
+        {
+            this.taxAmount=taxAmount;
+            return this;
+        }
+
+
+        public Builder netAmount(double netAmount)
+        {
+            this.netAmount=netAmount;
+            return this;
+        }
+
+
+
 
         public Builder copy(Order value) {
-            this.orderNumber=value.getOrderNumber();
-            this.lineItems=value.getLineItems();
-            this.purchaseOrderDate=value.getPurchaseOrderDate();
-            this.deliveryDate=value.getDeliveryDate();
-            this.supplierID=value.getSupplierID();
-            this.supplierName=value.getSupplierName();
-            this.lineItemCount=value.getLineItemCount();
+            this.orderId=value.getOrderId();
+            this.customerId=value.getCustomerId();
+            this.billingAddressId=value.getBillingAddressId();
+            this.shippingAddressId=value.getShippingAddresId();
+            this.orderDate=value.getOrderDate();
+            this.shippingDate=value.getShippingDate();
+            this.orderAmount=value.getOrderAmount();
+            this.discount=value.getDiscount();
+            this.shippingAmount=value.getShippingAmount();
+            this.taxAmount=value.getTaxAmount();
+            this.netAmount=value.getNetAmount();
+
+
 
 
             return this;
@@ -108,33 +152,51 @@ public class Order implements Serializable {
 
     }
 
-    public int getOrderNumber() {
-        return orderNumber;
+    public Long getOrderId() {
+        return orderId;
     }
 
-    public List<LineItem> getLineItems() {
-        return lineItems;
+    public Long getCustomerId() {
+        return customerId;
     }
 
-    public Date getPurchaseOrderDate() {
-        return purchaseOrderDate;
+    public Long getShippingAddresId() {
+        return shippingAddresId;
     }
 
-    public Date getDeliveryDate() {
-        return deliveryDate;
+    public Long getBillingAddressId() {
+        return billingAddressId;
     }
 
-    public int getSupplierID() {
-        return supplierID;
+    public Date getOrderDate() {
+        return orderDate;
     }
 
-    public int getLineItemCount() {
-        return lineItemCount;
+    public Date getShippingDate() {
+        return shippingDate;
     }
 
-    public String getSupplierName() {
-        return supplierName;
+    public double getOrderAmount() {
+        return orderAmount;
     }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public double getShippingAmount() {
+        return shippingAmount;
+    }
+
+    public double getTaxAmount() {
+        return taxAmount;
+    }
+
+    public double getNetAmount() {
+        return netAmount;
+    }
+
+
 
     @Override
     public boolean equals(Object obj) {
@@ -145,13 +207,13 @@ public class Order implements Serializable {
             return false;
         }
         final Order other = ( Order ) obj;
-        if (!Objects.equals(this.orderNumber, other.orderNumber)) {
+        if (!Objects.equals(this.orderId, other.orderId)) {
             return false;
         }
         return true;
     }
     @Override
     public String toString() {
-        return "Oder id{" + ":" + orderNumber+ '}';
+        return "Oder id{" + ":" + orderId+ '}';
     }
 }

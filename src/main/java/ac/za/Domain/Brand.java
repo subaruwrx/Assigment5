@@ -9,34 +9,42 @@ import java.util.Objects;
  */
 public class Brand implements Serializable {
     private Long id;
-    private String brandCode;
     private String brandName;
-    private List<Product> prod;
+    private byte[] logo;
 
-    private  Brand(){
+
+    private Brand(){
 
     }
 
-    private  Brand(Builder build ){
+    public Brand(Builder build ){
         this.id=build.id;
-        this.brandCode=build.brandCode;
         this.brandName=build.brandName;
+        this.logo=build.logo;
 
 
     }
 
     public static  class Builder{
         private Long id;
-        private String brandCode;
         private String brandName;
+        private byte[] logo;
 
-        public Builder(Long id)
+
+        public Builder()
         {
-            this.id=id;
+
         }
 
-        public Builder brandCode(String brandCode){
-            this.brandCode=brandCode;
+        public Builder id(Long id)
+        {
+            this.id=id;
+            return this;
+        }
+
+
+        public Builder logo( byte[] logo){
+            this.logo=logo;
             return  this;
         }
 
@@ -49,7 +57,7 @@ public class Brand implements Serializable {
         public Builder copy(Brand value)
         {
             this.id=value.getId();
-            this.brandCode=value.getBrandCode();
+            this.logo=value.getLogo();
             this.brandName=value.getBrandName();
 
             return this;
@@ -67,8 +75,8 @@ public class Brand implements Serializable {
         return id;
     }
 
-    public String getBrandCode() {
-        return brandCode;
+    public byte[] getLogo() {
+        return logo;
     }
 
     public String getBrandName() {

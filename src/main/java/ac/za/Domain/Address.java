@@ -7,15 +7,21 @@ import java.io.Serializable;
  */
 public class Address implements Serializable {
 
+    private Long id;
     private String city;
     private String street;
     private String country;
+    private String zipCode;
 
-    public Address() {
+
+
+    private Address() {
 
     }
 
-    private Address(Builder build) {
+    public Address(Builder build) {
+        this.id = build.id;
+        this.zipCode = build.zipCode;
         this.city = build.city;
         this.street = build.street;
         this.country = build.country;
@@ -24,16 +30,33 @@ public class Address implements Serializable {
 
     public static class Builder {
 
+        private Long id;
         private String city;
         private String street;
         private String country;
+        private String zipCode;
 
-        public Builder(String city) {
+        public Builder() {
+
+        }
+        public Builder city(String city) {
             this.city = city;
+            return this;
 
         }
 
-        public Builder Street(String street) {
+        public Builder id(Long id)
+        {
+            this.id=id;
+            return  this;
+        }
+
+        public Builder zipCode(String zipCode)
+        {
+            this.zipCode=zipCode;
+            return this;
+        }
+        public Builder street(String street) {
             this.street = street;
             return this;
         }
@@ -44,9 +67,11 @@ public class Address implements Serializable {
         }
 
         public Builder copy(Address address) {
-            city = address.getCity();
-            street = address.getStreet();
-            country = address.getCountry();
+            this.id=address.getId();
+            this.zipCode=address.getZipCode();
+            this.city = address.getCity();
+            this.street = address.getStreet();
+            this.country = address.getCountry();
             return this;
 
         }
@@ -57,6 +82,13 @@ public class Address implements Serializable {
 
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
     public String getCity() {
         return city;
     }
